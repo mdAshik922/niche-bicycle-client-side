@@ -7,7 +7,7 @@ const useFirebae = () => {
   const auth = getAuth();
   const [user, setUser] = useState({});
   const [error, setError] = useState('');
-  const [isLoding, setIsLoding] = useState(false);
+  const [isLoding, setIsLoding] = useState(true);
   const [admin, setAdmin] = useState(false);
   const [token, setToken] = useState();
 
