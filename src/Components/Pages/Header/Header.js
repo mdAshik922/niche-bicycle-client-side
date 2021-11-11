@@ -26,6 +26,8 @@ const Header = () => {
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             Bicycle
           </Typography>
+          <NavLink to="/"><Button style={{color: 'whitesmoke'}}>Home</Button></NavLink>
+        
           <NavLink to="/explore"><Button style={{color: 'whitesmoke'}}>Bicycle</Button></NavLink>
         
           {user.email?
