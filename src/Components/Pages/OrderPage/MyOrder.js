@@ -31,7 +31,8 @@ const MyOrder = () => {
 history.push('/login');
             };
         })
-        .then(data => setOrders(data));
+        .then(data => console.log
+(data));
 
     },[]);
       
