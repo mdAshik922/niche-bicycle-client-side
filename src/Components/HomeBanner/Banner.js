@@ -11,7 +11,7 @@ const Banner = () => {
         <Grid item xs={6} sm={6} md={5}>
         <img style={{borderRadius: '25px'}} src={banner} alt=""/>
         </Grid>
-        <Grid item xs={9} sm={8} md={6}>
+        <Grid sx={{marginLeft: 5}} item xs={9} sm={8} md={6}>
          <Typography variant="h2">
 
          Direct to Consumer Pricing
