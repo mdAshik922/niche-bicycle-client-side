@@ -9,7 +9,7 @@ const useFirebae = () => {
   const [error, setError] = useState('');
   const [isLoding, setIsLoding] = useState(true);
   const [admin, setAdmin] = useState(false);
-  const [token, setToken] = useState();
+  const [token, setToken] = useState('');
 
   const provider = new GoogleAuthProvider();
 
@@ -20,7 +20,7 @@ const useFirebae = () => {
       .then((result) => {
 
         const user = result.user;
-        saveUser(user.email, user.displayName, 'PUT')
+        saveUser(user.email, user.displayName, 'PUT');
         // ...
         setError('');
         const destination = location?.state?.from || '/';
@@ -28,7 +28,7 @@ const useFirebae = () => {
       }).catch((error) => {
         setError(error.message);
       }).finally(() => setIsLoding(false));
-  }
+  };
 
 
   const createAccount = (email, password, name, history) => {
@@ -54,8 +54,8 @@ const useFirebae = () => {
         setError(error.message);
         console.log(error);
       })
-      .finally(() => setIsLoding(false))
-  }
+      .finally(() => setIsLoding(false));
+  };
 
 
   const logIn = (email, password, location, history) => {
@@ -69,31 +69,32 @@ const useFirebae = () => {
       .catch((error) => {
         setError(error.message);
       })
-      .finally(() => setIsLoding(false))
-  }
+      .finally(() => setIsLoding(false));
+  };
 
   useEffect(() => {
-    const unsubscribed = onAuthStateChanged(auth, (user) => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
       if (user) {
         setUser(user);
-        getIdToken(user)
+          getIdToken(user)
           .then(idToken => {
-            setToken(idToken)
-          })
-
-      } else {
-        setUser({})
+             setToken(idToken);
+            });
+      }
+      else {
+          setUser({});
       }
       setIsLoding(false);
-    });
-    return () => unsubscribed;
-  }, [auth])
+  });
+  return () => unsubscribe;
+  }, [auth]);
+
 
   useEffect(() => {
     fetch(`https://nameless-stream-54785.herokuapp.com/users/${user.email}`)
       .then(res => res.json())
       .then(data => setAdmin(data.admin))
-  }, [user.email])
+  }, [user.email]);
 
   const logOut = () => {
     setIsLoding(true)
@@ -103,7 +104,7 @@ const useFirebae = () => {
     }).catch((error) => {
       // An error happened.
     });
-  }
+  };
 
 
   const saveUser = (email, displayName, method) => {
@@ -118,8 +119,8 @@ const useFirebae = () => {
       .then(res => res.json())
       .then(data => {
         console.log(data)
-      })
-  }
+      });
+  };
 
   return {
     user,

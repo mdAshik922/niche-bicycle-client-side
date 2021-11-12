@@ -1,6 +1,4 @@
 import React, { useEffect, useState } from 'react';
-
-
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
@@ -8,34 +6,38 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Typography from '@mui/material/Typography';
-
 import Paper from '@mui/material/Paper';
 import { Box } from '@mui/system';
 import useAuth from '../../../Hooks/useAuth';
 import { useHistory } from 'react-router';
 import { Button } from '@mui/material';
+
 const MyOrder = () => {
     const [orders, setOrders]=useState([]);
-    const {user} = useAuth();
+    const {user, token} = useAuth();
     const history = useHistory();
+
       useEffect(()=>{
-        const url = `https://nameless-stream-54785.herokuapp.com/order?email=${user.email}`;
-        fetch(url)
+        fetch(`https://nameless-stream-54785.herokuapp.com/order?email=${user.email}`,{
+          headers: {
+            'authorization' : `Bearer ${(token)}`
+        }
+      })
         .then(res =>{
             if(res.status === 200){
                 return res.json();
             }
             else if (res.status === 401){
-history.push('./login');
-            }
+history.push('/login');
+            };
         })
-        .then(data => setOrders(data))
+        .then(data => setOrders(data));
 
-    },[])
+    },[]);
       
-
+//order item DELETE
     const hendelDelete = id =>{
-      // console.log(id);
+     
       const url = `https://nameless-stream-54785.herokuapp.com/order/${id}`;
       fetch(url, {
           method: 'DELETE',
@@ -50,7 +52,7 @@ history.push('./login');
               alert('successfully delete');
               const remaning = orders.filter(order => order._id !== id);
               setOrders(remaning);
-             }
+             };
       //  console.log(data);
       } );
   };

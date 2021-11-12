@@ -16,7 +16,7 @@ const Reviews = () => {
           <Typography sx={{color: 'goldenrod'}} variant="h4">
             Coustomar Reviews
           </Typography>
-        <Grid container spacing={2} columns={16}>
+        <Grid sx={{marginTop: '15px'}} container spacing={2} columns={16}>
           {
            reviews.map(review =><ShowReview
            key={review._id}

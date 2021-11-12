@@ -33,7 +33,9 @@ const Header = () => {
           {user.email?
    <Box>
      <NavLink to="/dashbord"><Button style={{color: 'red'}} >Dash-Bord</Button></NavLink>
+             
               <NavLink to="/purches"><Button style={{color: 'whitesmoke'}}>My-Order</Button></NavLink>
+            
             <Button onClick={logOut} color="inherit">Logout</Button>
    </Box>
           :

@@ -32,13 +32,11 @@ body: JSON.stringify(reviews)
         .then(data => {
             // console.log(data)
             if (data.insertedId){
-            alert('success your comment')
-               
-             
+            alert('success your comment');
                         }
-                    })
+                    });
                     e.preventDefault();
-    }
+    };
     return (
     
 <Box sx={{ minWidth: 275, marginBottom: '15px' }}>
@@ -46,10 +44,15 @@ body: JSON.stringify(reviews)
 
 <form onSubmit={handelSubmit}>
     
-<TextField sx={{marginRight: '15px'}} onBlur={handelInput} name="name" required label=" Name" variant="standard"  focused />
+<TextField sx={{marginRight: '15px'}} 
+onBlur={handelInput} name="name"
+ required label=" Name" variant="standard"  focused />
 
 
-<TextField onBlur={handelInput} name="email"  type="email" label=" Email" variant="standard" required focused />
+<TextField onBlur={handelInput}
+ name="email"  type="email"
+  label="Email"
+  variant="standard" required focused />
 <br/>
 <br/>
 

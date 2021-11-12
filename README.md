@@ -19,7 +19,7 @@ This project Bicycle(https://github.com/facebook/create-react-app).
 
 My Bicycle website has a lot of features that make it attractive to people.
 I have high quality domestic and foreign bicycles here
-The most exciting mountain bike magazine of all time. digital, free and open-minded. Unbiased bike reviews and equipment tests
+The most exciting mountain bike magazine of all time. digital, free and open-minded. Unbiased bike reviews and equipment tests.
 
  
 

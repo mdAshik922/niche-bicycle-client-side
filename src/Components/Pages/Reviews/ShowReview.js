@@ -3,7 +3,7 @@ import { Card, CardActionArea, CardContent, Typography } from '@mui/material';
 import React from 'react';
 
 const ShowReview = ({review}) => {
-const {name, comment, }=review;
+const {name, message, email }=review;
     return (
     
 
@@ -14,8 +14,11 @@ const {name, comment, }=review;
     <Typography gutterBottom variant="h5" component="div">
     {name}
     </Typography>
+    <Typography gutterBottom variant="h5" component="div">
+    {email}
+    </Typography>
     <Typography variant="body2" color="text.secondary">
-    {comment}
+    {message}
     </Typography>
   </CardContent>
 </CardActionArea>

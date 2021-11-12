@@ -19,7 +19,7 @@ const Footer = () => {
         </Typography>
       
       <Typography sx={{marginLeft: '40%', color: 'white'}} variant="h6" component="div" gutterBottom>
-      <i class="fas fa-phone-volume"></i> +8801725456846
+      <i className="fas fa-phone-volume"></i> +8801725456846
       </Typography>
           </Grid>
 

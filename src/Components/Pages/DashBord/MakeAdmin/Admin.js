@@ -23,7 +23,7 @@ const {token}=useAuth();
         })
         .then(res=>res.json())
         .then(data =>{
-            if(data.modifyCount){
+            if(data.modifiedCount){
                 // console.log(data);
                 setEmail('');
                 setsuccess(true);

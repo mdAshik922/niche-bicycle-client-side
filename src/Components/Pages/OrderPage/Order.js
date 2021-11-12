@@ -3,14 +3,14 @@ import { useParams } from 'react-router';
 import OrderForm from '../Form/OrderForm/OrderForm';
 
 const Order = () => {
-    const [user, setUser] = useState({})
+    const [user, setUser] = useState({});
     const {id} = useParams();
 
     useEffect(() => {
-      const uri = `https://nameless-stream-54785.herokuapp.com/order/${id}`;
+      const uri = `https://nameless-stream-54785.herokuapp.com/bicycle/${id}`;
         fetch(uri)
         .then(res=>res.json())
-        .then(data=>setUser(data))
+        .then(data=>setUser(data));
     },[]);
     
     return (
