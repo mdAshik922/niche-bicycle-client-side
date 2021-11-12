@@ -5,6 +5,7 @@ import Reviews from '../Reviews/Reviews';
 import bicycle1 from './img/Screenshot_4.png';
 import bicycle2 from './img/Screenshot_7.png';
 import './Home.css';
+import Features from '../features/Features';
 const Home = () => {
    
     return (
@@ -22,7 +23,7 @@ const Home = () => {
 <img src={bicycle2} alt=""/>
 </div>
 
-   
+   <Features></Features>
            <Reviews></Reviews>
        </>
     );
