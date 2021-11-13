@@ -14,15 +14,11 @@ import { Button } from '@mui/material';
 
 const MyOrder = () => {
     const [orders, setOrders]=useState([]);
-    const {user, token} = useAuth();
+    const {user} = useAuth();
     const history = useHistory();
 
       useEffect(()=>{
-        fetch(`https://nameless-stream-54785.herokuapp.com/order?email=${user.email}`,{
-          headers: {
-            'authorization' : `Bearer ${(token)}`
-        }
-      })
+        fetch(`https://nameless-stream-54785.herokuapp.com/orders?email=${user.email}`)
         .then(res =>{
             if(res.status === 200){
                 return res.json();
@@ -31,15 +27,14 @@ const MyOrder = () => {
 history.push('/login');
             };
         })
-        .then(data => console.log
-(data));
+        .then(data => setOrders(data));
 
     },[]);
       
 //order item DELETE
     const hendelDelete = id =>{
      
-      const url = `https://nameless-stream-54785.herokuapp.com/order/${id}`;
+      const url = `https://nameless-stream-54785.herokuapp.com/orders/${id}`;
       fetch(url, {
           method: 'DELETE',
           headers: {
@@ -71,6 +66,7 @@ history.push('/login');
             <TableCell align="right">Phone</TableCell>
           
             <TableCell align="right">Serivce</TableCell>
+            <TableCell align="right">Delete Item</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
@@ -85,7 +81,8 @@ history.push('/login');
               <TableCell align="right">{row.email}</TableCell>
               <TableCell align="right">{row.phone}</TableCell>
               <TableCell align="right">Bicycle</TableCell>
-            <Button onClick={()=>hendelDelete(row._id)}>Delete</Button>
+              <TableCell align="right"><Button onClick={()=>hendelDelete(row._id)}>Delete</Button></TableCell>
+            
             </TableRow>
           ))}
         </TableBody>
