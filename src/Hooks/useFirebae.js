@@ -62,7 +62,7 @@ const useFirebae = () => {
     setIsLoding(true);
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
-        const destination = location?.state?.from || '/';
+        const destination = location?.state?.from || '/dashbord';
         history.replace(destination);
         setError('');
       })
