@@ -7,7 +7,7 @@ const Order = () => {
     const {id} = useParams();
 
     useEffect(() => {
-      const uri = `https://locallhost:5000/bicycle/${id}`;
+      const uri = `https://nameless-stream-54785.herokuapp.com/bicycle/${id}`;
         fetch(uri)
         .then(res=>res.json())
         .then(data=>setUser(data));
