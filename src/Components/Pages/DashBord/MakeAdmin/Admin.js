@@ -25,18 +25,18 @@ const {token}=useAuth();
         })
         .then(res=>res.json())
         .then(data =>{
-            console.log(data);
-            // if(data.modifiedCount){
-            //     // console.log(data);
-            //     setEmail('');
-            //     setsuccess(true);
+           
+            if(data.modifiedCount){
+                // console.log(data);
+                setEmail('');
+                setsuccess(true);
                
-            // }
+            }
          
         });
         e.preventDefault();
     };
-    console.log(email);
+  
     return (
         <div>
             <h2>admins dashbord</h2>
