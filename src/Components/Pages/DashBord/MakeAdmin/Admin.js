@@ -15,7 +15,7 @@ const {token}=useAuth();
     const handelSubmit = e =>{
         const user = {email};
         
-        fetch('http://localhost:5000/users/admin', {
+        fetch(' https://nameless-stream-54785.herokuapp.com/users/admin', {
             method: 'PUT',
             headers: {
                 'authorization': `Bearer ${token}`,

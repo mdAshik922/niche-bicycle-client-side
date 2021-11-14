@@ -14,7 +14,7 @@ setBicycles(newLoginData);
     const handelSubmit = e =>{
 
 // post api
-        fetch('http://localhost:5000/bicycle', {
+        fetch(' https://nameless-stream-54785.herokuapp.com/bicycle', {
             method: 'POST',
             headers: {
             'content-type': 'application/json'
