@@ -14,7 +14,7 @@ setIsOrder(newLoginData);
 
     const handelSubmit = e =>{
 
-        fetch('https://nameless-stream-54785.herokuapp.com/order', {
+        fetch('http://localhost:5000/order', {
             method: 'POST',
             headers: {
             'content-type': 'application/json'

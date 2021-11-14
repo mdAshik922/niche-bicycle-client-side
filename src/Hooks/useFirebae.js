@@ -58,19 +58,6 @@ const useFirebae = () => {
   };
 
 
-  const logIn = (email, password, location, history) => {
-    setIsLoding(true);
-    signInWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-        const destination = location?.state?.from || '/dashbord';
-        history.replace(destination);
-        setError('');
-      })
-      .catch((error) => {
-        setError(error.message);
-      })
-      .finally(() => setIsLoding(false));
-  };
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
@@ -89,9 +76,8 @@ const useFirebae = () => {
   return () => unsubscribe;
   }, [auth]);
 
-
   useEffect(() => {
-    fetch(`https://nameless-stream-54785.herokuapp.com/users/${user.email}`)
+    fetch(`http://localhost:5000/users/${user.email}`)
       .then(res => res.json())
       .then(data => setAdmin(data.admin))
   }, [user.email]);
@@ -106,10 +92,29 @@ const useFirebae = () => {
     });
   };
 
+  const logIn = (email, password, location, history) => {
+    setIsLoding(true);
+    signInWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        const destination = location?.state?.from || '/dashbord';
+        history.replace(destination);
+        setError('');
+      })
+      .catch((error) => {
+        setError(error.message);
+      })
+      .finally(() => setIsLoding(false));
+  };
+
+ 
+
+
+ 
+
 
   const saveUser = (email, displayName, method) => {
     const user = { email, displayName };
-    fetch('https://nameless-stream-54785.herokuapp.com/users', {
+    fetch('http://localhost:5000/users', {
       method: method,
       headers: {
         'content-type': 'application/json'

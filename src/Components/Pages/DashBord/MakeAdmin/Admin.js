@@ -4,6 +4,7 @@ import useAuth from '../../../../Hooks/useAuth';
 
 const Admin = () => {
     const [email, setEmail] = useState('');
+
     const [success, setsuccess] = useState(false);
 
 const {token}=useAuth();
@@ -13,7 +14,8 @@ const {token}=useAuth();
     };
     const handelSubmit = e =>{
         const user = {email};
-        fetch('https://nameless-stream-54785.herokuapp.com/users/admin', {
+        
+        fetch('http://localhost:5000/users/admin', {
             method: 'PUT',
             headers: {
                 'authorization': `Bearer ${token}`,
@@ -23,19 +25,21 @@ const {token}=useAuth();
         })
         .then(res=>res.json())
         .then(data =>{
-            if(data.modifiedCount){
-                // console.log(data);
-                setEmail('');
-                setsuccess(true);
+            console.log(data);
+            // if(data.modifiedCount){
+            //     // console.log(data);
+            //     setEmail('');
+            //     setsuccess(true);
                
-            }
+            // }
          
         });
         e.preventDefault();
     };
+    console.log(email);
     return (
         <div>
-            <h2>admin</h2>
+            <h2>admins dashbord</h2>
             <form onSubmit={handelSubmit}>
 <TextField 
 label="email"

@@ -27,7 +27,7 @@ function DashBord(props) {
     let { path, url } = useRouteMatch();
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
-const {admin}= useAuth()
+const {admin, logOut}= useAuth()
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
@@ -40,6 +40,7 @@ const {admin}= useAuth()
       <Link to="/"><Button>Home</Button></Link>
       <Link to={`${url}`}><Button>Appointment</Button></Link>
       <Link to={`${url}/reviewform`}><Button>Review-Form</Button></Link>
+     <Button  onClick={logOut}>Logout</Button>
       {admin && <Box>
         <Link to={`${url}/admin`}><Button>Make-Admin</Button></Link>
       <Link to={`${url}/manage`}><Button>Manage</Button></Link>

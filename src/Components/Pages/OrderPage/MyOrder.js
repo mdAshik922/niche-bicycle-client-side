@@ -18,7 +18,7 @@ const MyOrder = () => {
     const history = useHistory();
 
       useEffect(()=>{
-        fetch(`https://nameless-stream-54785.herokuapp.com/orders?email=${user.email}`)
+        fetch(`http://localhost:5000/orders?email=${user.email}`)
         .then(res =>{
             if(res.status === 200){
                 return res.json();
@@ -34,7 +34,7 @@ history.push('/login');
 //order item DELETE
     const hendelDelete = id =>{
      
-      const url = `https://nameless-stream-54785.herokuapp.com/orders/${id}`;
+      const url = `http://localhost:5000/orders/${id}`;
       fetch(url, {
           method: 'DELETE',
           headers: {
