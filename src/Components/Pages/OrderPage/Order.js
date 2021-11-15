@@ -11,7 +11,7 @@ const Order = () => {
         fetch(uri)
         .then(res=>res.json())
         .then(data=>setUser(data));
-    },[]);
+    },[id]);
     
     return (
         <div>
