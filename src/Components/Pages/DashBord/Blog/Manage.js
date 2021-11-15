@@ -9,14 +9,14 @@ const Manage = () => {
   
     // console.log(services)
     useEffect(() =>{
-       fetch(' https://nameless-stream-54785.herokuapp.com/bicycle')
+       fetch('https://nameless-stream-54785.herokuapp.com/bicycle')
         .then(res => res.json())
         .then(data => setManages(data))
     },[]);
 
     const hendelDelete = id =>{
         // console.log(id);
-        const url = ` https://nameless-stream-54785.herokuapp.com/bicycle/${id}`;
+        const url = `https://nameless-stream-54785.herokuapp.com/bicycle/${id}`;
         fetch(url, {
             method: 'DELETE',
             headers: {

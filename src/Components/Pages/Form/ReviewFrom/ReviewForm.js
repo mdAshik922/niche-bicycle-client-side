@@ -21,7 +21,7 @@ setReviews(newLoginData);
     const handelSubmit = e =>{
 
 // post api
-        fetch(' https://nameless-stream-54785.herokuapp.com/review', {
+        fetch('https://nameless-stream-54785.herokuapp.com/review', {
             method: 'POST',
             headers: {
             'content-type': 'application/json'

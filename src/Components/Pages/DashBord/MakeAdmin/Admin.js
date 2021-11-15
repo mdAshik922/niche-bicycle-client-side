@@ -4,18 +4,15 @@ import useAuth from '../../../../Hooks/useAuth';
 
 const Admin = () => {
     const [email, setEmail] = useState('');
+    const [success, setSuccess] = useState(false);
+    const { token } = useAuth();
 
-    const [success, setsuccess] = useState(false);
-
-const {token}=useAuth();
-
-    const handelEmail = e =>{
-        setEmail(e.target.value)
-    };
-    const handelSubmit = e =>{
-        const user = {email};
-        
-        fetch(' https://nameless-stream-54785.herokuapp.com/users/admin', {
+    const handleOnBlur = e => {
+        setEmail(e.target.value);
+    }
+    const handleAdminSubmit = e => {
+        const user = { email };
+        fetch('https://nameless-stream-54785.herokuapp.com/users/admin', {
             method: 'PUT',
             headers: {
                 'authorization': `Bearer ${token}`,
@@ -23,28 +20,26 @@ const {token}=useAuth();
             },
             body: JSON.stringify(user)
         })
-        .then(res=>res.json())
-        .then(data =>{
-           
-            if(data.modifiedCount){
-                // console.log(data);
-                setEmail('');
-                setsuccess(true);
-               
-            }
-         
-        });
-        e.preventDefault();
-    };
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+                if (data.modifiedCount) {
+                    console.log(data);
+                    setSuccess(true);
+                }
+            })
+
+        e.preventDefault()
+    }
   
     return (
         <div>
-            <h2>admins dashbord</h2>
-            <form onSubmit={handelSubmit}>
+            <h2> Make Admin</h2>
+            <form onSubmit={handleAdminSubmit}>
 <TextField 
 label="email"
  type="email"
-  onBlur={handelEmail}
+  onBlur={handleOnBlur}
    variant="standard"
    />
 

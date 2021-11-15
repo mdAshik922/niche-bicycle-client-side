@@ -5,14 +5,14 @@ const UpdateProduct = () => {
 const [updateProduct, setUpdateProduct] = useState({});
 const {id} = useParams();
 useEffect(()=>{
-    const url = ` https://nameless-stream-54785.herokuapp.com/bicycle/${id}`;
+    const url = `https://nameless-stream-54785.herokuapp.com/bicycle/${id}`;
     fetch(url)
     .then(res=>res.json())
     .then(data => setUpdateProduct(data))
 },[]);
 
 const handelUpdate = e =>{
-const url = ` https://nameless-stream-54785.herokuapp.com/bicycle/${id}`;
+const url = `https://nameless-stream-54785.herokuapp.com/bicycle/${id}`;
 fetch(url,{
     method: 'PUT',
     headers: {
