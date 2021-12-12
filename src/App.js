@@ -20,6 +20,8 @@ import Admin from './Components/Pages/DashBord/MakeAdmin/Admin';
 import AdminRoute from './Components/PrivateRoute/AdminRoute';
 import Manage from './Components/Pages/DashBord/Blog/Manage';
 import UpdateProduct from './Components/Pages/DashBord/Blog/UpdateProduct';
+import Payment from './Components/Pages/Pay/Payment';
+
 function App() {
   return (
     <div className="App">
@@ -37,7 +39,9 @@ function App() {
 
          <PrivateRoute  path="/reviewform"><ReviewForm></ReviewForm></PrivateRoute>
 
-         <PrivateRoute  path="/purches"><MyOrder></MyOrder></PrivateRoute>
+         <PrivateRoute  path="/payment"><Payment></Payment></PrivateRoute>
+
+         <PrivateRoute  path="/purchase"><MyOrder></MyOrder></PrivateRoute>
 
          <PrivateRoute  path="/order"><OrderForm></OrderForm></PrivateRoute>
 

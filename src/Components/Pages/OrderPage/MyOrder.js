@@ -19,7 +19,7 @@ const MyOrder = () => {
     const history = useHistory();
 
       useEffect(()=>{
-        fetch(`https://nameless-stream-54785.herokuapp.com/orders?email=${user.email}`)
+        fetch(`https://nameless-stream-54785.herokuapp.com/allOrder/${user.email}`)
         .then(res =>{
             if(res.status === 200){
                 return res.json();
@@ -55,7 +55,8 @@ history.push('/login');
 
     return (
        <Box>
-            <Typography variant="h4" sx={{ color: 'info.main', mb: 3 }}>YOUR ORDERS:{orders.length}</Typography>
+            <Typography variant="h4" sx={{ color: 'info.main', mb: 3 }}>
+              YOUR ORDERS:{orders.length}</Typography>
       
         <TableContainer component={Paper}>
       <Table sx={{ minWidth: 650 }} aria-label="orders table">
@@ -64,8 +65,6 @@ history.push('/login');
             <TableCell>Name</TableCell>
             <TableCell align="right">Email</TableCell>
             <TableCell align="right">Phone</TableCell>
-          
-           
             <TableCell align="right">Payment</TableCell>
             <TableCell align="right">Delete Item</TableCell>
           </TableRow>
@@ -81,7 +80,7 @@ history.push('/login');
               </TableCell>
               <TableCell align="right">{row.email}</TableCell>
               <TableCell align="right">{row.phone}</TableCell>
-              <TableCell align="right">{row.payment ?'paid':<Link to={`/dashboard/payment/${row._id}`}><button>pay</button></Link>}</TableCell>
+              <TableCell align="right">{row.payment ?'paid':<Link to={`/dashboard/payment/${row._id}`}><button>Appointment</button></Link>}</TableCell>
               
               <TableCell align="right"><Button onClick={()=>handleDelete(row._id)}>Delete</Button></TableCell>
             

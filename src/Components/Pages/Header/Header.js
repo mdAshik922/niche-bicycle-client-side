@@ -24,7 +24,7 @@ const Header = () => {
    <>
      <NavLink to="/dashboard"><Button style={{color: 'red'}} >Dashboard</Button></NavLink>
              
-              <NavLink to="/purches"><Button style={{color: 'whitesmoke'}}>Order</Button></NavLink>
+              <NavLink to="/purchase"><Button style={{color: 'whitesmoke'}}>Order</Button></NavLink>
             <NavLink to="#">
               {user.displayName}
             </NavLink>

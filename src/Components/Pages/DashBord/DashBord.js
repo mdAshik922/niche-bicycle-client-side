@@ -40,6 +40,8 @@ const {admin, logOut}= useAuth()
       <Divider />
       <Link to="/"><Button>Home</Button></Link>
       <Link to={`${url}`}><Button>Appointment</Button></Link>
+      
+      <Link to="/payment"><Button>payment</Button></Link>
       <Link to={`${url}/reviewform`}><Button>Review-Form</Button></Link>
      <Button  onClick={logOut}>Logout</Button>
       {admin && <Box>

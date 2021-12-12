@@ -6,7 +6,6 @@ import useAuth from '../../../../Hooks/useAuth';
 
 const OrderForm = ( props ) => {
    
-    console.log(props);
    const {price}= props.bicycle || {};
     const { user } = useAuth();
     const [isOrder, setIsOrder]=useState({});
@@ -31,7 +30,7 @@ body: JSON.stringify(isOrder)
         .then(res => res.json())
         .then(data => {
             if (data.insertedId){
-            alert('success order but Payment system coming soon. thank you!')
+            alert('success order, thank you!')
                
              
                         }
@@ -76,7 +75,7 @@ body: JSON.stringify(isOrder)
 <br/>
 <br/>
 
-<Button sx={{ width: '75%', m: 1, backgroundColor: 'green' }} type="submit" variant="contained">Purches</Button>
+<Button sx={{ width: '75%', m: 1, backgroundColor: 'green' }} type="submit" variant="contained">purchase</Button>
 
 </form>
 

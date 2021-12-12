@@ -116,7 +116,7 @@ transaction:paymentIntent.clientSecret.slice('_secret')[0]
         }}
       />
    { processing?<CircularProgress></CircularProgress> : <button type="submit" disabled={!stripe || success}>
-      Pay
+      Appointment
     </button>}
       {error && <p style={{color: "red"}}>{error}</p>}
       {success && <p style={{color: "green"}}>{success}</p>}
