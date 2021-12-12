@@ -22,7 +22,7 @@ const Header = () => {
         
           {user.email?
    <>
-     <NavLink to="/dashbord"><Button style={{color: 'red'}} >Dashboard</Button></NavLink>
+     <NavLink to="/dashboard"><Button style={{color: 'red'}} >Dashboard</Button></NavLink>
              
               <NavLink to="/purches"><Button style={{color: 'whitesmoke'}}>Order</Button></NavLink>
             <NavLink to="#">

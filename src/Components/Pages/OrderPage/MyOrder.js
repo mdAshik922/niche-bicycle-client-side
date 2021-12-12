@@ -11,10 +11,11 @@ import { Box } from '@mui/system';
 import useAuth from '../../../Hooks/useAuth';
 import { useHistory } from 'react-router';
 import { Button } from '@mui/material';
+import { Link } from 'react-router-dom';
 
 const MyOrder = () => {
-    const [orders, setOrders]=useState([]);
-    const {user} = useAuth();
+    const [ orders, setOrders ]=useState([]);
+    const { user }  = useAuth();
     const history = useHistory();
 
       useEffect(()=>{
@@ -29,10 +30,10 @@ history.push('/login');
         })
         .then(data => setOrders(data));
 
-    },[]);
+    },[user.email]);
       
 //order item DELETE
-    const hendelDelete = id =>{
+    const handleDelete = id =>{
      
       const url = `https://nameless-stream-54785.herokuapp.com/orders/${id}`;
       fetch(url, {
@@ -46,10 +47,9 @@ history.push('/login');
           if(data.deletedCount){
             window.confirm('are you sure delete order!');
               alert('successfully delete');
-              const remaning = orders.filter(order => order._id !== id);
-              setOrders(remaning);
+              const remaining = orders.filter(order => order._id !== id);
+              setOrders(remaining);
              };
-      //  console.log(data);
       } );
   };
 
@@ -65,7 +65,8 @@ history.push('/login');
             <TableCell align="right">Email</TableCell>
             <TableCell align="right">Phone</TableCell>
           
-            <TableCell align="right">Serivce</TableCell>
+           
+            <TableCell align="right">Payment</TableCell>
             <TableCell align="right">Delete Item</TableCell>
           </TableRow>
         </TableHead>
@@ -80,8 +81,9 @@ history.push('/login');
               </TableCell>
               <TableCell align="right">{row.email}</TableCell>
               <TableCell align="right">{row.phone}</TableCell>
-              <TableCell align="right">Bicycle</TableCell>
-              <TableCell align="right"><Button onClick={()=>hendelDelete(row._id)}>Delete</Button></TableCell>
+              <TableCell align="right">{row.payment ?'paid':<Link to={`/dashboard/payment/${row._id}`}><button>pay</button></Link>}</TableCell>
+              
+              <TableCell align="right"><Button onClick={()=>handleDelete(row._id)}>Delete</Button></TableCell>
             
             </TableRow>
           ))}

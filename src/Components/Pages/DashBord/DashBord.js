@@ -18,6 +18,7 @@ import useAuth from '../../../Hooks/useAuth';
 import Appointment from './MyAppoinment/Appointment';
 import Manage from './Blog/Manage';
 import ReviewForm from '../Form/ReviewFrom/ReviewForm';
+import Payment from '../Pay/Payment';
 
 
 const drawerWidth = 120;
@@ -100,6 +101,9 @@ const {admin, logOut}= useAuth()
         <Switch>
         <Route exact path={path}>
       <Appointment></Appointment>
+        </Route>
+        <Route  path={`${path}/payment/:bicycId`}>
+   <Payment></Payment>
         </Route>
         <Route  path={`${path}/manage`}>
    <Manage></Manage>

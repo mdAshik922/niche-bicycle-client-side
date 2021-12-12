@@ -1,30 +1,29 @@
 import { Grid } from '@mui/material';
 import { Box } from '@mui/system';
 import React, { useEffect, useState } from 'react';
-import Products from './Products';
+import OrderForm from '../../Form/OrderForm/OrderForm';
 
-const Product = () => {
-    const [bicycles, setBicycles]=useState([]);
+const PassProductPrice = () => {
+    const [passBicycles, setPassBicycles]=useState([]);
 
     useEffect(()=>{
         fetch('https://nameless-stream-54785.herokuapp.com/bicycle')
         .then(res=>res.json())
-        .then(data =>setBicycles(data))
+        .then(data =>setPassBicycles(data))
     },[]);
 
     return (
         <Box sx={{ width: '100%' }}>
       <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
-       {
-           (bicycles || []).map(bicycle =><Products key={bicycle._id}
-           bicycle={bicycle}
-           ></Products>
-        
-           )
-       }
+      {/* {
+         passBicycles.map(bicycle=><OrderForm
+         key={bicycle._id}
+
+         ></OrderForm>) 
+      } */}
       </Grid>
     </Box>
     );
 };
 
-export default Product;
+export default PassProductPrice;

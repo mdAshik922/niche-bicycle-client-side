@@ -5,7 +5,7 @@ import { getAuth, createUserWithEmailAndPassword, getIdToken, signInWithEmailAnd
 initializeFirebase();
 const useFirebae = () => {
   const [user, setUser] = useState({});
-  const [isLoding, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(true);
   const [error  , setError] = useState('');
   const [admin, setAdmin] = useState(false);
   const [token, setToken] = useState('');
@@ -32,7 +32,7 @@ const useFirebae = () => {
           })
           .catch((error) => {
             setError(error.message);
-              console.log(error);
+            
           })
           .finally(() => setIsLoading(false));
   }
@@ -49,7 +49,7 @@ const useFirebae = () => {
             setError(error.message);
           })
           .finally(() => setIsLoading(false));
-  }
+  };
 
   const signInGoogle = (location, history) => {
       setIsLoading(true);
@@ -63,7 +63,7 @@ const useFirebae = () => {
           }).catch((error) => {
             setError(error.message);
           }).finally(() => setIsLoading(false));
-  }
+  };
 
   // observer user state
   useEffect(() => {
@@ -119,7 +119,7 @@ const useFirebae = () => {
     signInGoogle,
     createAccount,
     logIn,
-    isLoding,
+    isLoading,
     error,
     logOut
   }

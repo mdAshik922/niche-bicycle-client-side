@@ -18,9 +18,9 @@ const Home = () => {
 
 
 
-<div >
-<img src={bicycle1} alt=""/>
-<img src={bicycle2} alt=""/>
+<div style={{marginBottom: "7px", marginTop: "5px"}} >
+<img className="zoom" src={bicycle1} alt=""/>
+<img className="zoom" src={bicycle2} alt=""/>
 </div>
 
    <Features></Features>

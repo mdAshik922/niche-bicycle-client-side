@@ -8,7 +8,7 @@ const HomePageProductShow = () => {
     useEffect(()=>{
         fetch('https://nameless-stream-54785.herokuapp.com/bicycle')
         .then(res=>res.json())
-        .then(data =>setBicycles(data.slice(3)))
+        .then(data =>setBicycles(data.slice(1)))
     },[])
 
     return (

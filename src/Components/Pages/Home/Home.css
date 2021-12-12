@@ -1,4 +1,17 @@
-img.hover{
-    background-color: rgb(205 231 189);
-    
-}
+* {
+    box-sizing: border-box;
+  }
+  
+  .zoom {
+   
+    transition: transform .9s;
+    width: 40%;
+    height: 50%;
+    margin: 0 auto;
+  }
+  
+  .zoom:hover {
+    -ms-transform: scale(1.5); /* IE 9 */
+    -webkit-transform: scale(1.5); /* Safari 3-8 */
+    transform: scale(1.1); 
+  }

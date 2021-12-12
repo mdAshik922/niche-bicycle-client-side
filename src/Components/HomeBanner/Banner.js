@@ -1,10 +1,25 @@
 import React from 'react';
 import { Button, Grid, Typography } from '@mui/material';
 import { Box } from '@mui/system';
-
-import { Link } from 'react-router-dom';
 import banner from './banner.png';
+import Dialog from '@mui/material/Dialog';
+import DialogActions from '@mui/material/DialogActions';
+import DialogContent from '@mui/material/DialogContent';
+import DialogContentText from '@mui/material/DialogContentText';
+import DialogTitle from '@mui/material/DialogTitle';
+
+
 const Banner = () => {
+ 
+    const [open, setOpen] = React.useState(false);
+  
+    const handleClickOpen = () => {
+      setOpen(true);
+    };
+  
+    const handleClose = () => {
+      setOpen(false);
+    };
     return (
         <Box sx={{ flexGrow: 1, backgroundColor: 'gray', color: 'whitesmoke' }}>
       <Grid container spacing={2}>
@@ -29,7 +44,31 @@ const Banner = () => {
             to you - where they belong. Add to that our free, fast delivery and local support and 
          you can rest assured knowing you are getting the best deal on your new bike.
          </Typography>
-   <Link to="/"> <Button sx={{backgroundColor: 'goldenrod'}} >Learn More</Button></Link>
+         <Button variant="outlined" onClick={handleClickOpen}>
+        Open draggable dialog
+      </Button>
+      <Dialog
+        open={open}
+        onClose={handleClose}
+      
+        aria-labelledby="draggable-dialog-title"
+      >
+        <DialogTitle style={{ cursor: 'move' }} id="draggable-dialog-title">
+          Subscribe
+        </DialogTitle>
+        <DialogContent>
+          <DialogContentText>
+            To subscribe to this website, please enter your email address here. We
+            will send updates occasionally.
+          </DialogContentText>
+        </DialogContent>
+        <DialogActions>
+          <Button autoFocus onClick={handleClose}>
+            Cancel
+          </Button>
+          <Button onClick={handleClose}>Subscribe</Button>
+        </DialogActions>
+      </Dialog>
         </Grid>
         
       </Grid>

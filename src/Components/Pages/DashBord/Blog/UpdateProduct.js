@@ -9,7 +9,7 @@ useEffect(()=>{
     fetch(url)
     .then(res=>res.json())
     .then(data => setUpdateProduct(data))
-},[]);
+},[id]);
 
 const handelUpdate = e =>{
 const url = `https://nameless-stream-54785.herokuapp.com/bicycle/${id}`;
@@ -31,7 +31,7 @@ setUpdateProduct({});
 e.preventDefault();
 };
 
-const handelname =e =>{
+const handelName =e =>{
    const updateName = e.target.value;
 const updateProduct = {name: updateName};
 setUpdateProduct(updateProduct)
@@ -43,8 +43,8 @@ setUpdateProduct(updateProduct)
             <form onSubmit={handelUpdate}>
 <TextField 
 label= "Update Product Name"
-name= ""
-onChange={handelname}
+name= "name"
+onChange={handelName}
 value={updateProduct.name || ''}
 type= "text"
 variant="standard"

@@ -2,8 +2,8 @@ import { Grid, Paper, Typography } from '@mui/material';
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const Products = ({bicycle}) => {
-    const {name, price, description, _id, img}=bicycle;
+const Products = ({ bicycle }) => {
+    const { name, price, description, _id, img } = bicycle;
 
 
     return (
@@ -24,7 +24,7 @@ const Products = ({bicycle}) => {
               <button
                style={{ backgroundColor: 'goldenrod',  color: 'whitesmoke',
                }}
-               >Purches</button>
+               >purchase</button>
               </Link>
         </Paper>
     </Grid>
