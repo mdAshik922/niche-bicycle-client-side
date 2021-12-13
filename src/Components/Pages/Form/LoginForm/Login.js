@@ -7,7 +7,7 @@ import { NavLink, useLocation, useHistory } from 'react-router-dom';
 import useAuth from '../../../../Hooks/useAuth';
 const Login = () => {
     const [loginData, setLoginData] = useState({});
-    const { user, logIn, signInGoogle, isLoding, error } = useAuth();
+    const { user, logIn, signInGoogle, isLoading, error } = useAuth();
 
     const location = useLocation();
     const history = useHistory();
@@ -59,7 +59,7 @@ const Login = () => {
                         to="/register">
                         <Button variant="text">New User? Please Register</Button>
                     </NavLink>
-                    {isLoding && <CircularProgress />}
+                    {isLoading && <CircularProgress />}
                     {user?.email && <Alert severity="success">Login successfully!</Alert>}
                     {error && <Alert severity="error">{error}</Alert>}
                 </form>

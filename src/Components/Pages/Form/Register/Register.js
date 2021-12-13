@@ -8,7 +8,7 @@ const Register = () => {
     const [loginData, setLoginData] = useState({});
     const history = useHistory();
     const location = useLocation();
-    const { user, signInGoogle, createAccount, isLoding, error } = useAuth();
+    const { user, signInGoogle, createAccount, isLoading, error } = useAuth();
 
     const handleOnBlur = e => {
         const field = e.target.name;
@@ -36,7 +36,7 @@ const Register = () => {
             <Grid container spacing={2}>
                 <Grid item sx={{ mt: 8 }} xs={12} md={8}>
                     <Typography variant="body1" gutterBottom>Register</Typography>
-                    {!isLoding && <form onSubmit={handleLoginSubmit}>
+                    {!isLoading && <form onSubmit={handleLoginSubmit}>
 
                 {/* Name Field */}
                         <TextField
@@ -84,7 +84,7 @@ const Register = () => {
                             <Button variant="text">Already Registered? Please Login</Button>
                         </NavLink>
                     </form>}
-                    {isLoding && <CircularProgress />}
+                    {isLoading && <CircularProgress />}
                     {user?.email && <Alert severity="success">User Created successfully!</Alert>}
                     {error && <Alert severity="error">{error}</Alert>}
                     <p>------------------------</p>
