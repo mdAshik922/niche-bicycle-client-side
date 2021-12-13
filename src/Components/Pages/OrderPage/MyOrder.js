@@ -14,12 +14,12 @@ import { Button } from '@mui/material';
 import { Link } from 'react-router-dom';
 
 const MyOrder = () => {
-    const [ orders, setOrders ]=useState([]);
+    const [ orders, setOrders ] = useState([]);
     const { user }  = useAuth();
     const history = useHistory();
 
       useEffect(()=>{
-        fetch(`https://nameless-stream-54785.herokuapp.com/allOrder/${user.email}`)
+        fetch(`https://nameless-stream-54785.herokuapp.com/orders?email=${user.email}`)
         .then(res =>{
             if(res.status === 200){
                 return res.json();

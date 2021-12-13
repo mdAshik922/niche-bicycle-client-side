@@ -17,48 +17,54 @@ const Footer = () => {
       <Grid container spacing={2} columns={16}>
         <Grid  sx={{marginLeft: '20%'}}  xs={4}>
        
-        <Typography sx={{color: "white"}} variant="h4" gutterBottom component="div">
+        <Typography sx={{color: "white"}} variant="h6" gutterBottom component="div">
      About
       </Typography>
-      <Typography sx={{color: "white"}} variant="body2" gutterBottom>
-      We are builders and innovators, but we are also a global community
-       of cyclists. We are athletes, adventurers and advocates for cycling.
-        We are Tour de France racers, singletrack explorers,
-         neighbors and friends.
 
-Put it all together, and Bicycle is a complete ecosystem of bikes,
- gear and cycling services, seamlessly connected and always accessible.
-  You can find us at our more than 12,000 retail stores
- around the world or connect with us online from wherever you are.
+        <Typography sx={{color: "white"}} variant="h6" gutterBottom component="div">
+Contact Us
       </Typography>
+
+        <Typography sx={{color: "white"}} variant="h6" gutterBottom component="div">
+        Terms & Conditons
+
+      </Typography>
+
+        <Typography sx={{color: "white"}} variant="h6" gutterBottom component="div">
+        shipping & Delivery
+
+      </Typography>
+        <Typography sx={{color: "white"}} variant="h6" gutterBottom component="div">
+        Privacy Policy
+
+      </Typography>
+      
         </Grid>
 
         <Grid sx={{marginLeft: "10%"}}  xs={6}>
-        <Typography sx={{color: "white"}} variant="h4" gutterBottom component="div">
+        <Typography sx={{color: "white"}} variant="h5" gutterBottom component="div">
         Quick Contact
       </Typography>
         <Typography sx={{color: "white"}} variant="h6" gutterBottom component="div">
-        +255 255 54 53 52
+        60,24th Road No #12, Wireless Gate, CA 902945, Mohakhali, Dhaka, Bangladesh
+
 
       </Typography>
         <Typography sx={{color: "white"}} variant="h6" gutterBottom component="div">
      
-+255 255 53 52 51
+        +01 7779 090 / +91 4447 343
+
       </Typography>
       <Typography sx={{color: "white"}} variant="h6" gutterBottom component="div">
        Email:
       </Typography>
       <Typography sx={{color: "white"}} variant="body1" gutterBottom>
-      support@email.com
-
+     bicycle@gmail.com
       </Typography>
-      <Typography sx={{color: "white"}} variant="body1" gutterBottom>
-     
-company@email.com
-      </Typography>
+   
         </Grid>
         <Grid  sx={{marginLeft: '5%'}}  xs={6}>
-        <Typography sx={{color: "white"}} variant="h4" gutterBottom component="div">
+        <Typography sx={{color: "white"}} variant="h5" gutterBottom component="div">
        Follow us
       </Typography>
  {/* facebook */}
