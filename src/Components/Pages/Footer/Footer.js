@@ -68,17 +68,21 @@ Contact Us
        Follow us
       </Typography>
  {/* facebook */}
- <Link to="#">  <img width='25px' src={facebook} alt=""/></Link>
-     
-     {/* youtube */}
-            <Link to="#">  <img style={{marginLeft: '5px', marginRight: '5px', width: 25}} src={youtube} alt=""/></Link>
+ <Link to="#">
+     <img width='25px' src={facebook} alt=""/></Link>
             
     {/* Linkedin */}
-             <Link to="#"> <img style={{marginLeft: '5px', marginRight: '5px', width: 25}} src={linkedin} alt=""/>
+             <Link to="#">
+                <img style={{marginLeft: '5px', marginRight: '5px', width: 25}} src={linkedin} alt=""/>
      </Link>
     
     {/* instagram */}
-     <Link to="#">  <img width="25px" src={instagram} alt=""/></Link>
+     <Link to="#">
+         <img width="25px" style={{ marginRight: '5px', width: 25 }} src={instagram} alt=""/></Link>
+
+         {/* youtube */}
+         <Link to="#">
+                <img width="30px"  src={youtube} alt=""/></Link>
         </Grid>
       </Grid>
 
