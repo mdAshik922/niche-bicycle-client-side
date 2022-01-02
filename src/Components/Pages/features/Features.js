@@ -10,9 +10,9 @@ const Features = () => {
     return (
         <Box sx={{ flexGrow: 1 }}>
             <Typography variant="h4">Our facilities and features</Typography>
-      <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
+      <Grid  container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
        
-          <Grid item xs={2} sm={4} md={4}>
+          <Grid sx={{marginLeft:"10%"}} item xs={2} sm={4} md={4}>
            <img src={firstFeature} alt=""/>
            <Typography variant="h4">
 End of trip Servicing
@@ -21,7 +21,7 @@ End of trip Servicing
            We’ve created the perfect citybike to give you the best experience.
            </Typography>
           </Grid>
-          <Grid item xs={2} sm={4} md={4}>
+          <Grid sx={{marginLeft:"5%"}} item xs={2} sm={4} md={4}>
             <img src={secondFeature} alt=""/>
            <Typography variant="h4">
                Individual Route Section 

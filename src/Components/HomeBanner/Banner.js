@@ -24,7 +24,7 @@ const Banner = () => {
         <Box sx={{ flexGrow: 1, backgroundColor: 'gray', color: 'whitesmoke' }}>
       <Grid container spacing={2}>
         <Grid item xs={6} sm={6} md={5}>
-        <img style={{borderRadius: '25px'}} src={banner} alt=""/>
+        <img style={{borderRadius: '25px', width: "100%", maxWidth: "400px"}} src={banner} alt="banner"/>
         </Grid>
         <Grid sx={{marginLeft: 5}} item xs={9} sm={8} md={6}>
          <Typography variant="h2">
