@@ -3,7 +3,7 @@ import { Button, Grid, Paper, Typography } from '@mui/material';
 import { Link } from 'react-router-dom';
 
 const homePageProduct = ({bicycle}) => {
-    const {name, price, description, img}=bicycle;
+    const {name, price, img}=bicycle;
 
    
     return (
@@ -16,9 +16,7 @@ const homePageProduct = ({bicycle}) => {
             <Typography variant="h6" gutterBottom component="div">
                $ {price}
             </Typography>
-            <Typography variant="caption" display="block" gutterBottom>
-                {description}
-            </Typography>
+           
           <Link to="/explore">
           <Button variant="contained">Purchase </Button></Link>
         </Paper>

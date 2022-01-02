@@ -12,7 +12,7 @@ const HomePageProductShow = () => {
     },[])
 
     return (
-        <Box sx={{ width: '100%' }}>
+        <Box sx={{ width: '100%', marginLeft: "10%" }}>
         <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
         {bicycles.map(bicycle =><HomePageProduct
         key={bicycle._id}
